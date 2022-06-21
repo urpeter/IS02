@@ -1,10 +1,12 @@
+import ast
+
 import gpiozero
 import signal
 import json
 import argparse
 from collections import defaultdict
 
-###### Global Variables ########
+###### User Settings ########
 user_database = defaultdict()
 
 class UserProfile():
@@ -44,6 +46,11 @@ class UserProfile():
             goal = bmr
         return goal
 
+def create_user(name,age,weight, height, goal, sex, activity):
+    new_user = UserProfile(name, age, weight, height, goal, sex, activity)
+    user_database[new_user.id] = new_user
+    return
+
 ##### building database ########
 class FoodItem()
     def __init__(self, name, nutrients):
@@ -59,27 +66,24 @@ def build_food_database(data_path):
 
     with open("food_kcal_database.txt","w") as kcal_saved:
             kcal_saved.write(str(kcal_database))
-    return
+    return kcal_database
 
 
-def create_user(name,age,weight, height, goal, sex, activity):
-    new_user = UserProfile(name, age, weight, height, goal, sex, activity)
-    user_database[new_user.id] = new_user
-    return
-
+###### System Settings #######
 def initialize():
-    build_food_database("FoodData_Central_foundation_food_json_2022-04-28.json")
-
-    return
+    if args["init"] == True:
+        cal_data = build_food_database("FoodData_Central_foundation_food_json_2022-04-28.json")
+    else:
+        with open("food_kcal_database.txt") as d:
+            cal_data = ast.literal_eval(d.read())
+    return cal_data
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Parse the arguments to setup the scale")
     parser.add_argument('--init', action="store_true" ,help="initializes the Database")
     args = vars(parser.parse_args())
 
-    if args["init"] == True:
-        initialize()
-    else:
+    food_database = initialize()
 
     active_scale = False
 
