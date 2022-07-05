@@ -1,0 +1,138 @@
+{
+    "Hummus": {
+        "Protein": 7.35,
+        "Total lipid (fat)": 17.1,
+        "Carbohydrate, by difference": 14.9,
+        "Energy": 229
+    },
+    "Tomatoes": {
+        "Total lipid (fat)": 0.63,
+        "Protein": 0.83,
+        "Carbohydrate, by difference": 5.51,
+        "Energy": 27.0
+    },
+    "Beans": {
+        "Total lipid (fat)": 0.39,
+        "Carbohydrate, by difference": 4.11,
+        "Energy": 21.0,
+        "Protein": 1.04
+    },
+    "Frankfurter": {
+        "Total lipid (fat)": 28.0,
+        "Carbohydrate, by difference": 2.89,
+        "Energy": 314,
+        "Protein": 11.7
+    },
+    "Nuts": {
+        "Total lipid (fat)": 57.8,
+        "Carbohydrate, by difference": 16.2,
+        "Energy": 620,
+        "Protein": 20.4
+    },
+    "Kale": {
+        "Total lipid (fat)": 1.21,
+        "Carbohydrate, by difference": 5.3,
+        "Energy": 36.0,
+        "Protein": 2.94
+    },
+    "Egg": {
+        "Total lipid (fat)": 55.5,
+        "Carbohydrate, by difference": 1.07,
+        "Protein": 34.2,
+        "Energy": 654
+    },
+    "Onion rings": {
+        "Total lipid (fat)": 14.4,
+        "Carbohydrate, by difference": 36.3,
+        "Energy": 288,
+        "Protein": 4.52
+    },
+    "Pickles": {
+        "Total lipid (fat)": 0.43,
+        "Carbohydrate, by difference": 1.99,
+        "Protein": 0.48,
+        "Energy": 12.0
+    },
+    "Cheese": {
+        "Protein": 23.7,
+        "Total lipid (fat)": 20.4,
+        "Carbohydrate, by difference": 4.44,
+        "Energy": 298
+    },
+    "Grapefruit juice": {
+        "Protein": 0.55,
+        "Total lipid (fat)": 0.7,
+        "Carbohydrate, by difference": 7.59,
+        "Energy": 37.0
+    },
+    "Peaches": {
+        "Carbohydrate, by difference": 10.1,
+        "Energy": 42.0,
+        "Protein": 0.91,
+        "Total lipid (fat)": 0.27
+    },
+    "Seeds": {
+        "Total lipid (fat)": 56.1,
+        "Carbohydrate, by difference": 17.1,
+        "Energy": 612,
+        "Protein": 21.0
+    },
+    "Bread": {
+        "Total lipid (fat)": 3.59,
+        "Carbohydrate, by difference": 49.2,
+        "Energy": 270,
+        "Protein": 9.43
+    },
+    "Mustard": {
+        "Protein": 4.25,
+        "Total lipid (fat)": 3.38,
+        "Carbohydrate, by difference": 5.3,
+        "Energy": 61.0
+    },
+    "Kiwifruit": {
+        "Total lipid (fat)": 0.44,
+        "Protein": 1.06,
+        "Carbohydrate, by difference": 14.0,
+        "Energy": 58.0
+    },
+    "Nectarines": {
+        "Carbohydrate, by difference": 9.18,
+        "Energy": 39.0,
+        "Total lipid (fat)": 0.28,
+        "Protein": 1.06
+    },
+    "Yogurt": {
+        "Total lipid (fat)": 0.15,
+        "Carbohydrate, by difference": 12.2,
+        "Energy": 83.0,
+        "Protein": 8.06
+    },
+    "Oil": {
+        "Protein": 0.0,
+        "Total lipid (fat)": 99.1,
+        "Energy": 833,
+        "Carbohydrate, by difference": 0.84
+    },
+    "Chicken": {
+        "Total lipid (fat)": 3.24,
+        "Carbohydrate, by difference": 0.0,
+        "Energy": 166,
+        "Protein": 32.1
+    },
+    "Sauce": {
+        "Total lipid (fat)": 1.48,
+        "Carbohydrate, by difference": 8.05,
+        "Energy": 45.0,
+        "Protein": 1.41
+    },
+    "Grapes": {
+        "Total lipid (fat)": 0.232,
+        "Protein": 0.899,
+        "Carbohydrate, by difference": 18.6
+    },
+    "Applesauce": {
+        "Total lipid (fat)": 0.162,
+        "Carbohydrate, by difference": 12.3,
+        "Protein": 0.273
+    }
+}
