@@ -1,0 +1,24 @@
+{
+    "1": {
+        "name": "Tom",
+        "age": 6,
+        "weight": 43,
+        "height": 111,
+        "goal": "loss",
+        "sex": "male",
+        "activity": 1.2,
+        "kcal_intake": 0,
+        "calorie_goal": 818.5
+    },
+    "2": {
+        "name": "Marie",
+        "age": 31,
+        "weight": 79,
+        "height": 205,
+        "goal": "gain",
+        "sex": "female",
+        "activity": 1.7,
+        "kcal_intake": 0,
+        "calorie_goal": 3483.9249999999997
+    }
+}
