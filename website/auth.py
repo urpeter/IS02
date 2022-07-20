@@ -1,6 +1,7 @@
 from flask import jsonify,Blueprint, render_template, request,flash
 import json
 from utils import setUserProfile, build_own_database
+from . import user_db as db
 
 auth = Blueprint('auth',__name__)
 
@@ -67,7 +68,7 @@ def scaleFoodItem():
         req = request.get_json()
         weight = req['weight']
         weight_metric = weight // 100.0
-        weighted_nutrients= {x: y*weight_metric for x,y in (food_database[request["name"].lower()]).items()}
+        weighted_nutrients= {x: y*weight_metric for x,y in (db.request["name"].lower()).items()}
         user_database[0]["kcal_intake"] = weighted_nutrients["Energy"]
         return jsonify(weighted_nutrients), 201
     return {"TypeError:": "Request is not JSON"}, 415

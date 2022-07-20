@@ -11,8 +11,6 @@ except:
 
 ##### building databases ########
 
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Parse the arguments to setup the scale")
     parser.add_argument('--init', action="store_true" ,help="initializes the Database")
@@ -20,6 +18,6 @@ if __name__ == '__main__':
     args = vars(parser.parse_args())
 
     app = create_application()
-    food_database = initialize()
+
     current_user_id = 0
     app.run(debug=True)

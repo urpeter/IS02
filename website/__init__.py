@@ -1,17 +1,29 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 import json
 from collections import defaultdict
 from os import path
 
+food_db = SQLAlchemy()
+food_DB_NAME = 'food_data.db'
+user_db = SQLAlchemy()
+user_DB_NAME = 'user_data.db'
 
 def create_application():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'sdgsdgsdg sadghrdtf'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{user_DB_NAME}'
+    app.config['SQLALCHEMY_BINDS'] = {"food_db": f'sqlite:///{food_DB_NAME}'}
+    user_db.init_app(app)
+
     from website.views import views
     from website.auth import auth
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
+
+    from .models import User, Food
+    initialize(app)
 
     return app
 
@@ -31,8 +43,10 @@ def build_food_database(data_path):
     return food_database
 
 
-def initialize():
-    if not path.exists("website/Databases/food_kcal_database.json"):
+def initialize(application):
+    if not path.exists(f"website/Databases/{user_DB_NAME}"):
+        user_db.create_all(app=application)
+
         food_db = build_food_database("FoodData_Central_foundation_food_json_2022-04-28.json")
     else :
         with open("website/Databases/food_kcal_database.json") as d:
