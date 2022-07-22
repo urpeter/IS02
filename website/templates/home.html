@@ -1,8 +1,9 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
-<h1 align="center">Notes</h1>
+<h1 align="center">Calories</h1>
 <ul class="list-group list-group-flush" id="notes">
-  {% for note in user.notes %}
+  <!--{% for note in user.notes %}-->
+  {% user.current_intake %}
   <li class="list-group-item">
     {{ note.data }}
     <button type="button" class="close" onClick="deleteNote({{ note.id }})">
@@ -15,7 +16,23 @@
   <textarea name="note" id="note" class="form-control"></textarea>
   <br />
   <div align="center">
-    <button type="submit" class="btn btn-primary">Add Note</button>
+    <!--<button type="submit" class="btn btn-primary">Add Note</button> -->
+    <button type="submit" class="btn btn-primary">Scale Item</button>
   </div>
+</form>
+<form method="POST">
+  <h3 align="center">Add Calories</h3>
+  <div class="form-group">
+    <label for="calories">Add Calories</label>
+    <input
+      type="number"
+      class="form-control"
+      id="calories"
+      name="calories"
+      placeholder="Enter the amount of calories"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 {% endblock %}

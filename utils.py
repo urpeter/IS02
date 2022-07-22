@@ -1,6 +1,6 @@
 import json
 from collections import defaultdict
-
+from website.models import User
 def build_own_database(fooditems:list):
     print(f"------Building favorite Database------")
     food_database = defaultdict()
@@ -16,26 +16,23 @@ def build_own_database(fooditems:list):
         ufd.write(json.dumps(food_database,indent=4))
     return food_database
 
-def setUserProfile(database ,name, age, weight, height, goal, sex, activity): #activity should be 1.2 , 1.5 or 1.7
+def setUserProfile(name, age, weight, height, goal, sex, activity): #activity should be 1.2 , 1.5 or 1.7
     args = locals()
-    new_user = {str(parameters):values for parameters, values in args.items()}
-    id = len(database.keys()) + 1
-    new_user["kcal_intake"] = 0
-    new_user["calorie_goal"] = set_calorie_goal(new_user)
-    return id , new_user
+    cal_intake = set_calorie_goal(sex,height,age,activity,weight)
+    new_user = User(name=name,age=age,weight=weight, height=height,
+                    goal=goal,sex=sex,activity=activity,kcal_intake=cal_intake,current_intake=0)
+    return new_user
 
-def set_calorie_goal(user):
-    if user["sex"] == "female":
-        bmr = (user["weight"] * 10.0 + user["height"] * 6.25 - user["age"] * 5.0 - 161.0) * user["activity"]
+def set_calorie_goal(sex,height,age,activity, weight):
+    if sex == "female":
+        bmr = ((weight * 10.0 + height) * 6.25 - age * 5.0 - 161.0) * activity
     else:
-        bmr = (user["weight"] * 10.0 + user["height"] * 6.25 - user["age"] * 5.0 + 5.0) * user["activity"]
-    if user["goal"] == "loss":
-        goal = bmr - 500.0
-    elif user["goal"] == "gain":
-        goal = bmr + 500.0
-    else:
-        goal = bmr
-    return goal
+        bmr = ((weight * 10.0 + height) * 6.25 - age * 5.0 + 5.0) * activity
+    if "goal" == "loss":
+        bmr = bmr - 500.0
+    elif "goal" == "gain":
+        bmr = bmr + 500.0
+    return bmr
 
 def toJSON(doc):
     return json.dumps(doc, sort_keys=True)

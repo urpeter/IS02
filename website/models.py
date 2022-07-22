@@ -19,3 +19,4 @@ class User(user_db.Model, UserMixin):
     sex =  user_db.Column(user_db.String(150))
     activity = user_db.Column(user_db.Float)
     kcal_intake = user_db.Column(user_db.Float)
+    current_intake = user_db.Column(user_db.Float)

@@ -1,0 +1,18 @@
+% extends "base.html" %} {% block title %}Add Calories{% endblock %} {% block
+content %}
+<form method="POST">
+  <h3 align="center">Add Calories</h3>
+  <div class="form-group">
+    <label for="calories">Add Calories</label>
+    <input
+      type="number"
+      class="form-control"
+      id="calories"
+      name="calories"
+      placeholder="Enter the amount of calories"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

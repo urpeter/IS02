@@ -4,8 +4,8 @@ import json
 from collections import defaultdict
 from os import path
 
-food_db = SQLAlchemy()
-food_DB_NAME = 'food_data.db'
+#food_db = SQLAlchemy()
+#food_DB_NAME = 'food_data.db'
 user_db = SQLAlchemy()
 user_DB_NAME = 'user_data.db'
 
@@ -13,7 +13,7 @@ def create_application():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'sdgsdgsdg sadghrdtf'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{user_DB_NAME}'
-    app.config['SQLALCHEMY_BINDS'] = {"food_db": f'sqlite:///{food_DB_NAME}'}
+    #app.config['SQLALCHEMY_BINDS'] = {"food_db": f'sqlite:///{food_DB_NAME}'}
     user_db.init_app(app)
 
     from website.views import views
