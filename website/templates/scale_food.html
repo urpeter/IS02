@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% block title %}Scale Food{% endblock %} {% block content
+%}
+<h1 align="center">Favorite Food</h1>
+<ul class="list-group list-group-flush" id="foods">
+  {% for food in user.food %}
+  <li class="list-group-item">
+    {{ food.name }}
+    <button type="button" class="btn btn-primary" onClick="selectFood({{ food.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <h3 align="center">Add new Items</h3>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="Name"
+    />
+  </div>
+  <div class="form-group">
+
+    <input
+      type="text"
+      class="form-control"
+      id="protein"
+      name="protein"
+      placeholder="Protein"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      id="fat"
+      name="fat"
+      placeholder="Fat"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      id="carbohydrates"
+      name="carbohydrates"
+      placeholder="Carbs"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      id="energy"
+      name="energy"
+      placeholder="Energy in kcal"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
